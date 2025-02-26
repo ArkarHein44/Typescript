@@ -29,9 +29,11 @@ let truck = (
     brand:string, 
     qty:number, 
     tax:number,
-    discount:number // "noUnusedParameters": false
+    // discount:number // "noUnusedParameters": false
 ):number=>{
     let price:number = 0;
+    let result: number = 0; // "noUnusedParameters": true
+
     if(brand === "toyota") price = 3000;
     if(brand === "mazda") price = 2000;
     if(brand === "suzuki") price = 1000;
