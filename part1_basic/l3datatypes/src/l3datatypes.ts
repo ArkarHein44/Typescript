@@ -62,4 +62,6 @@ console.log(infoarrs);
 const product:[string,number] = ["Redbull", 2500];
 console.log(product);
 
+
+
 // 12DT
