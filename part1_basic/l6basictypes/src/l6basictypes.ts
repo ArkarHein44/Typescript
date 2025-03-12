@@ -331,3 +331,65 @@ console.log(sayhello("Min Ga Lar Par"));
 
 // 26BT 
 // 5BH
+
+// Nested Object Type 
+type Address = {
+    street: string;
+    city: string;
+    country: string;
+};
+
+type Customer = {
+    name: string;
+    phone: string;
+    address: Address; // Nested object type
+}
+
+const vipcu: Customer ={
+    name: "U Hla",
+    phone: "0912345",
+    address:{
+        street: "123 main st",
+        city: "Mandalay",
+        country: "Myanmar"
+    }
+
+};
+
+console.log(vipcu);
+
+// => Literal Object Type 
+function employer(owner:{fullname:string}):string{
+
+    return owner.fullname;
+}
+
+console.log(employer({fullname:"Mon Mon"}));  
+
+
+// literal object type (destructuring)
+function lawyer({fullname}:{fullname:string}):string{
+    return fullname;
+}
+
+console.log(lawyer({fullname:"U Ba"}));
+
+//=> typeof in "in typescript Typequery"
+
+console.log(typeof "Hello Sir");
+console.log(typeof 1500);
+
+const Animal = {
+
+    name: "Panda",
+    age: 7
+}
+
+type Pet = typeof Animal;
+
+let petone:Pet = {
+    name: "Cute Cat",
+    age: 10
+};
+
+console.log(petone);
