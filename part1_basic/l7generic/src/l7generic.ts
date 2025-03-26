@@ -122,6 +122,26 @@ console.log(typeof genfunfive(true));
 //     key2:T;
 // };
 
+type Book<T> = {
+    title:T;
+    content:T;
+    price:T;
+}
+
+const Article:Book<string> = {
+    title:"Article 1",
+    content:"This is the story of article 1",
+    price:"20 USD"
+}
+
+const Post:Book<number> = {
+    title:2,
+    content:2,
+    price:20
+}
+
+console.log(Article);
+
 // => Generic Object with Multiple Properties
 
 // syntax
@@ -142,6 +162,86 @@ const student:Person = {
     gender:"female",
     age:18
 }
+
+type Product<T1,T2> = {
+    name:T1;
+    price:T2;
+}
+
+const item:Product<string,number> = {
+    name: "Redbull",
+    price:2500
+}
+
+console.log(item)
+
+const item2:Product<string,string> = {
+    name: "Sponsor",
+    price:"FOC"
+}
+
+// => Generic Set
+let myset = new Set([10, 20, 30, 10,20]);
+console.log(myset); // 
+console.log(myset.size);
+
+console.log(myset.has(20));
+console.log(myset.has(70));
+
+let numberset:Set<number> = new Set([1,2,3,1,3]);
+console.log(numberset);
+
+let nameset:Set<string> = new Set(["Aung Aung", "Kyaw Kyaw", "Tun Tun"]);
+console.log(nameset);
+
+let mixeddatas:Set<string|number> = new Set([1,"2","Three"]);
+console.log(mixeddatas);
+
+// => Common Set Methods with Generics
+
+const numset:Set<number> = new Set();
+
+numset.add(1);
+numset.add(2);
+numset.add(3);
+numset.add(4);
+numset.add(5);
+numset.add(3);
+
+console.log(numset);
+console.log(numset.has(2));
+
+numset.delete(4);
+console.log(numset);
+
+numset.clear();
+
+// => Iterating Generic Set 
+
+const colorset:Set<string> = new Set(["Red", "Green", "Blue", "White", "Black"]);
+
+for(let color of colorset){
+    console.log(color);
+}
+
+colorset.forEach(color => {
+    console.log(color);
+});
+
+type User = {
+    id:number;
+    name:string;
+    age:number
+}
+
+const userset:Set<User> = new  Set([
+    {id:1, name:"Hsu Hsu", age:20},
+    {id:2, name:"Nu Nu", age:18},
+    {id:3, name:"Yu Yu", age:15}
+]);
+
+userset.add({id:4,name:"Hla Hla", age:16});
+console.log(userset);
 // 12GN 
 
 // gmail address
