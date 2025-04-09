@@ -120,3 +120,18 @@ const userset = new Set([
 ]);
 userset.add({ id: 4, name: "Hla Hla", age: 16 });
 console.log(userset);
+const shop = {
+    name: "Apple Store",
+    city: "Yangon"
+};
+let store = {
+    name: "Cherry Store",
+    city: "Mandalay"
+};
+function getshopinfo(obj, info) {
+    return obj[info];
+}
+let shopname = getshopinfo(store, "name");
+console.log(shopname);
+let shopcity = getshopinfo(store, "city");
+console.log(shopcity);
