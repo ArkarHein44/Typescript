@@ -1,33 +1,31 @@
-// Basic Class 
-class NumberStore
-{
-    private datas:number[] = [];
+// Basic Class
+class NumberStore {
+  private datas: number[] = [];
 
-    add(val:number):void{
-        this.datas.push(val);
-    }
+  add(val: number): void {
+    this.datas.push(val);
+  }
 
-    getdatas():number[]{
-        return this.datas;
-    }
+  getdatas(): number[] {
+    return this.datas;
+  }
 }
 
 const numberstoreObj = new NumberStore();
 numberstoreObj.add(10);
 console.log(numberstoreObj.getdatas());
 
-// Generic Class 
-class Store<T>
-{
-    private datas:T[] = [];
+// Generic Class
+class Store<T> {
+  private datas: T[] = [];
 
-    add(val:T):void{
-        this.datas.push(val);
-    }
+  add(val: T): void {
+    this.datas.push(val);
+  }
 
-    getdatas():T[]{
-        return this.datas;
-    }
+  getdatas(): T[] {
+    return this.datas;
+  }
 }
 
 const storeObj1 = new Store<number>();
@@ -49,48 +47,43 @@ storeObj3.add(true);
 storeObj3.add(false);
 console.log(storeObj3.getdatas());
 
-// exercise 1 
-class Student<T1,T2,T3>
-{
-    constructor(
-        public name:T1,
-        public age:T2,
-        public city:T3
-    ){
-
-    }
-
+// exercise 1
+class Student<T1, T2, T3> {
+  constructor(public name: T1, public age: T2, public city: T3) {}
 }
 
-const studentObj1 = new Student<string,number,string>("Nilar",18,"Yangon");
+const studentObj1 = new Student<string, number, string>("Nilar", 18, "Yangon");
 console.log(storeObj1);
 
-const studentObj2 = new Student<string,string,string>("Muyar","17 years old","Bago");
+const studentObj2 = new Student<string, string, string>(
+  "Muyar",
+  "17 years old",
+  "Bago"
+);
 console.log(storeObj2);
 
-// exercise 2 with interface 
+// exercise 2 with interface
 
-interface SetId{
-    id:number;
+interface SetId {
+  id: number;
 }
 
-class Storages<T extends SetId>
-{
-    private datas:T[] = [];
+class Storages<T extends SetId> {
+  private datas: T[] = [];
 
-    add(val:T):void{
-        this.datas.push(val);
-    }
+  add(val: T): void {
+    this.datas.push(val);
+  }
 
-    getdatas(id:number):T|undefined{
-        return this.datas.find(singledata=>singledata.id === id);
-    }
+  getdatas(id: number): T | undefined {
+    return this.datas.find((singledata) => singledata.id === id);
+  }
 }
 
-const storageObj = new Storages<{id:number;name:string}>();
-storageObj.add({id:1,name:"Aung Aung"});
-storageObj.add({id:2,name:"Hla Hla"});
-storageObj.add({id:3,name:"Kyaw Kyaw"});
+const storageObj = new Storages<{ id: number; name: string }>();
+storageObj.add({ id: 1, name: "Aung Aung" });
+storageObj.add({ id: 2, name: "Hla Hla" });
+storageObj.add({ id: 3, name: "Kyaw Kyaw" });
 console.log(storageObj.getdatas(1));
 console.log(storageObj.getdatas(3));
 
